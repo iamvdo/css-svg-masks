@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <clipPath id="clipPath" clipPathUnits="objectBoundingBox">
+      <polygon points=".5,0 .8,1 0,.4 1,.4 .2,1" />
+    </clipPath>
+    <mask id="mask" maskContentUnits="objectBoundingBox">
+      <rect width="1" height="1" fill="url(#gradient)"/>
+      <linearGradient x2="0" y2="1" id="gradient">
+        <stop offset="25%" stop-color="white" />
+        <stop offset="50%" stop-color="black" />
+      </linearGradient>
+    </mask>
+  </defs>
+</svg>

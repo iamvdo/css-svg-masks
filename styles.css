@@ -1,0 +1,94 @@
+html {
+  padding: 4em;
+  font: 1em sans-serif;
+}
+svg {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+}
+small {
+  color: #777;
+  font-size: .75em;
+}
+code {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+h1 {
+  margin-bottom: 0;
+}
+h2 {
+  margin-top: 2.5em;
+}
+p,
+ul {
+  color: #777;
+}
+a {
+  color: hsl(205, 65%, 24%);
+}
+.baseline {
+  margin-top: 0;
+  color: #777;
+  font-style: italic;
+  font-size: .75em;
+}
+.test {
+  display: flex;
+  margin: 30px 0;
+}
+.image {
+  width: 200px;
+  height: 200px;
+  margin-right: 30px;
+  background: hsl(205, 65%, 24%);
+}
+.text {
+  flex: 1 1 auto;
+}
+.title {
+  margin: 0;
+}
+.note {
+  display: inline-block;
+  margin: 0;
+  padding: 0 .5em;
+  font-size: .8em;
+  background: #aaa;
+  color: #fff;
+}
+.code {
+  display: block;
+  padding: 0 .5em;
+  white-space: pre;
+  font-size: 1em;
+  background: hsl(205, 5%, 20%);
+  color: #fff;
+  text-shadow: 0 1px 2px rgba(0,0,0,.4);
+  border-radius: 3px;
+}
+.img-mask {
+  width: 100px;
+  margin-right: 20px;
+  background: linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.25) 75%, rgba(0,0,0,.25)), 
+linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 25%, transparent 75%, rgba(0,0,0,.25) 75%, rgba(0,0,0,.25));
+  background-size: 10px;
+  background-position: 0 0, 5px 5px;
+}
+
+
+.Mask--placeholder {
+  position: absolute;
+  opacity: .1;
+}
+.image:hover .Mask--placeholder {
+  opacity: 0;
+}
+#js-clipPathSVGClipRule .Mask {
+  -webkit-clip-path: url(#clipPathClipRule);
+          clip-path: url(#clipPathClipRule);
+}
+#js-clipPathSVGClipRule .ClipPath {
+  clip-rule: evenodd;
+}

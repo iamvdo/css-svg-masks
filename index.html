@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CSS & SVG Masks on HTML content</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="http://iamvdo.me/images/favicon.png">
+</head>
+<body>
+
+<h1>CSS & SVG Masks <small>on HTML content</small></h1>
+<p class="baseline">Cause it already works perfectly on SVG content. <a href="https://drafts.fxtf.org/css-masking-1/">Spec</a></p>
+<p>Made by <a href="https://twitter.com/iamvdo">@iamvdo</a> - Code on <a href="https://github.com/iamvdo/css-svg-masks">GitHub</a></p>
+
+<p>All code blocks are editable and with live view</p>
+
+<h2 id="clipping">Clipping</h2>
+<p>Clipping in CSS can be compared to Photoshop “Vector Masks”. So only vector shapes.</p>
+
+<!-- clip() -->
+<div class="test" id="js-maskClip">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask Mask--clip" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>clip: rect()</code></h3>
+    <p class="note">deprecated</p>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskClip" contenteditable>
+.Mask {
+  position: absolute;
+  clip: rect(30px, 170px, 170px, 30px);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- clip-path: inset() -->
+<div class="test" id="js-clipPathRect">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>clip-path: inset()</code></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathRect" contenteditable>
+.Mask {
+  clip-path: inset(30px 30px);
+  //clip-path: inset(30px 20px 50px 0);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- clip-path: circle() -->
+<div class="test" id="js-clipPathCircle">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask Mask--clipPath" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>clip-path: circle()</code></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathCircle" contenteditable>
+.Mask {
+  clip-path: circle(75px at center);
+  //clip-path: circle(closest-side at 50px 50px);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- clip-path: polygon() -->
+<div class="test" id="js-clipPathPolygon">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask Mask--clipPath" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>clip-path: polygon()</code></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathPolygon" contenteditable>
+.Mask {
+  clip-path: polygon(50% 0%, 80% 100%, 0 40%, 100% 40%, 20% 100%);
+  //clip-path: polygon(evenodd, 50% 0%, 80% 100%, 0 40%, 100% 40%, 20% 100%);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- clip-path: url() (referencing SVG <clipPath>) -->
+<div class="test" id="js-clipPathSVG">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>clip-path: url()</code> (referencing inline SVG <code>&lt;clipPath></code>)</h3>
+    <svg id="svg-clipPathSVG"></svg>
+    <pre><code class="code liveCoding xml" data-livecoding-id="svg-clipPathSVG" contenteditable>
+&lt;clipPath id="clipPath" clipPathUnits="objectBoundingBox">
+  &lt;polygon points=".5,0 .8,1 0,.4 1,.4 .2,1" />
+&lt;/clipPath>
+    </code></pre>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVG" contenteditable>
+.Mask {
+  clip-path: url(#clipPath);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- clip-path: url() (referencing SVG <clipPath>) + clip-rule -->
+<div class="test" id="js-clipPathSVGClipRule">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>clip-path: url()</code> (referencing inline SVG <code>&lt;clipPath></code>) + <code>clip-rule: evenodd</code></h3>
+    <svg id="svg-clipPathSVGClipRule"></svg>
+    <pre><code class="code liveCoding xml" data-livecoding-id="svg-clipPathSVGClipRule" contenteditable>
+&lt;clipPath id="clipPathClipRule" class="ClipPath" clipPathUnits="objectBoundingBox">
+  &lt;polygon points=".5,0 .8,1 0,.4 1,.4 .2,1" />
+&lt;/clipPath>
+    </code></pre>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGClipRule" contenteditable>
+.Mask {
+  clip-path: url(#clipPathClipRule);
+}
+.ClipPath polygon {
+  clip-rule: evenodd;
+  //clip-rule: nonzero;
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- clip-path: url() (referencing external SVG <clipPath>) -->
+<div class="test" id="js-clipPathSVGExternal">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>clip-path: url()</code> (referencing external SVG <code>&lt;clipPath></code>)</h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGExternal" contenteditable>
+.Mask {
+  clip-path: url(masks.svg#clipPath);
+}
+    </code></pre>
+  </div>
+</div>
+
+<h2 id="masking">Masking</h2>
+<p>Masking in CSS can be compared to Photoshop masks, as follow:
+<ul>
+  <li>Alpha masks are Photoshop “Clipping Masks”: transparency matters. This is the default for CSS masks.</li>
+  <li>Luminance masks are Photoshop “Layer Masks”: white and black matter. This is the default for SVG masks.</li>
+</ul>
+<p>Here are masks images used below: <code>alpha-mask.png</code> and <code>luminance-mask.png</code></p>
+<p><img class="img-mask" src="alpha-mask.png" alt=""><img class="img-mask" src="luminance-mask.png" alt=""></p>
+
+<!-- mask-image: linear-gradient() (using default alpha mask) -->
+<div class="test" id="js-maskImageGradient">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: linear-gradient()</code> <small>(using alpha mask)</small></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageGradient" contenteditable>
+.Mask {
+  mask-image: linear-gradient(black 25%, transparent 50%);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- mask-image: linear-gradient() (force luminance mask) -->
+<div class="test" id="js-maskImageGradientLuminance">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: linear-gradient()</code> <small>(forcing luminance mask)</small></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageGradientLuminance" contenteditable>
+.Mask {
+  mask-image: linear-gradient(white 25%, black 50%);
+  mask-mode: luminance;
+  /* old WebKit */
+  //mask-source-type: luminance;
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- mask-image: url() (using alpha mask) -->
+<div class="test" id="js-maskImageUrl">
+  <style>
+  #js-maskImageUrl .Mask {
+    -webkit-mask-size: cover;
+    mask-size: cover;
+  }
+  </style>
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: url()</code> <small>(using default alpha mask)</small></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageUrl" contenteditable>
+.Mask {
+  mask-image: url(alpha-mask.png);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- mask-image: url() (using alpha mask) -->
+<div class="test" id="js-maskImageUrlLuminance">
+  <style>
+  #js-maskImageUrlLuminance .Mask {
+    -webkit-mask-size: cover;
+    mask-size: cover;
+  }
+  </style>
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: url()</code> <small>(forcing luminance mask)</small></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageUrlLuminance" contenteditable>
+.Mask {
+  mask-image: url(luminance-mask.png);
+  mask-mode: luminance;
+  /* old WebKit */
+  //mask-source-type: luminance;
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- mask-* -->
+<div class="test" id="js-maskProperties">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-*</code></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskProperties" contenteditable>
+.Mask {
+  mask-image: url(alpha-mask.png);
+  mask-size: 50%;
+  mask-repeat: round;
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- mask-image: url() (referencing SVG <mask>, using default luminance mask) -->
+<div class="test" id="js-maskSVG">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: url()</code> <small>(referencing inline SVG <code>&lt;mask></code>, using default luminance mask)</small></h3>
+    <svg id="svg-maskSVG"></svg>
+    <pre><code class="code liveCoding xml" data-livecoding-id="svg-maskSVG" contenteditable>
+&lt;mask id="mask" maskContentUnits="objectBoundingBox">
+  &lt;rect width="1" height="1" fill="url(#gradient)"/>
+  &lt;linearGradient x2="0" y2="1" id="gradient">
+    &lt;stop offset="25%" stop-color="white" />
+    &lt;stop offset="50%" stop-color="black" />
+  &lt;/linearGradient>
+&lt;/mask>
+    </code></pre>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVG" contenteditable>
+.Mask {
+  mask-image: url(#mask);
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- mask-image: url() (referencing SVG <mask>, forcing alpha mask) -->
+<div class="test" id="js-maskSVGMaskType">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: url()</code> <small>(referencing inline SVG <code>&lt;mask></code>, forcing alpha mask)</small></h3>
+    <svg id="svg-maskSVGMaskType"></svg>
+    <pre><code class="code liveCoding xml" data-livecoding-id="svg-maskSVGMaskType" contenteditable>
+&lt;mask id="maskMaskSource" class="MaskType" maskContentUnits="objectBoundingBox">
+  &lt;rect width="1" height="1" fill="url(#gradientMaskSource)"/>
+  &lt;linearGradient x2="0" y2="1" id="gradientMaskSource">
+    &lt;stop offset="25%" stop-color="black" />
+    &lt;stop offset="50%" stop-color="transparent" />
+  &lt;/linearGradient>
+&lt;/mask>
+    </code></pre>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGMaskType" contenteditable>
+.Mask {
+  mask-image: url(#maskMaskSource);
+}
+.MaskType {
+  mask-type: alpha;
+}
+    </code></pre>
+  </div>
+</div>
+
+<!-- mask-image: url() (referencing external SVG <mask>) -->
+<div class="test" id="js-maskSVGExternal">
+  <div class="image">
+    <img class="Mask--placeholder" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+    <img class="Mask" src="http://slides.iamvdo.me/parisweb14/vdo/imgs/6.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: url()</code> (referencing external SVG <code>&lt;mask></code>)</h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGExternal" contenteditable>
+.Mask {
+  mask-image: url(masks.svg#mask);
+}
+    </code></pre>
+  </div>
+</div>
+
+  <script src="https://rawgit.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js"></script>
+  <script src="livecoding.js"></script>
+
+</body>
+</html>
