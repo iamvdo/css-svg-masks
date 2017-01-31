@@ -57,6 +57,10 @@ var LiveCoding = (function() {
       }
       cssRules = cssRules.join('');
 
+      // force layout (bad for perf, good for live results)
+      var el = document.getElementById(demoElementId);
+      el.classList.toggle('forceLayout');
+
       // if <style id="liveCoding_9999"> doesn't exist, create it
       var styleElement = document.getElementById('liveCoding_' + demoElementId);
       if (styleElement === null) {

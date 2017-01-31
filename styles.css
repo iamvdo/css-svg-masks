@@ -35,8 +35,12 @@ a {
   font-size: .75em;
 }
 .test {
+  position: static;
   display: flex;
   margin: 30px 0;
+}
+.forceLayout {
+  position: relative;
 }
 .image {
   width: 200px;
