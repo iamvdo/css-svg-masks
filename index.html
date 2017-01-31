@@ -104,33 +104,28 @@
 .Mask {
   clip-path: url(#clipPath);
 }
+polygon {
+  clip-rule: nonzero;
+  //clip-rule: evenodd;
+}
     </code></pre>
   </div>
 </div>
 
-<!-- clip-path: url() (referencing SVG <clipPath>) + clip-rule -->
-<div class="test" id="js-clipPathSVGClipRule">
+<!-- clip-path: url() (SVG <clipPath> as data) -->
+<div class="test" id="js-clipPathSVGDataImage">
   <div class="image">
     <img class="Mask--placeholder" src="image.jpg" alt="">
     <img class="Mask" src="image.jpg" alt="">
   </div>
   <div class="text">
-    <h3 class="title"><code>clip-path: url()</code> <small>(referencing inline SVG <code>&lt;clipPath></code>) + <code>clip-rule: evenodd</code></small></h3>
-    <svg id="svg-clipPathSVGClipRule"></svg>
-    <pre><code class="code liveCoding xml" data-livecoding-id="svg-clipPathSVGClipRule" contenteditable>
-&lt;clipPath id="clipPathClipRule" class="ClipPath" clipPathUnits="objectBoundingBox">
-  &lt;polygon points=".5,0 .8,1 0,.4 1,.4 .2,1" />
-&lt;/clipPath>
-    </code></pre>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGClipRule" contenteditable>
+    <h3 class="title"><code>clip-path: url()</code> <small>(SVG <code>&lt;clipPath></code> as <code>data:image</code>)</small></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGDataImage" contenteditable>
 .Mask {
-  clip-path: url(#clipPathClipRule);
-}
-.ClipPath polygon {
-  clip-rule: evenodd;
-  //clip-rule: nonzero;
+  clip-path: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3CclipPath id="clipPath" clipPathUnits="objectBoundingBox"%3E%3Cpolygon points=".5,0 .8,1 0,.4 1,.4 .2,1" /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#clipPath');
 }
     </code></pre>
+    <p>As converted by this <a href="https://github.com/komachi/postcss-clip-path-polyfill">PostCSS plugin</a></p>
   </div>
 </div>
 
