@@ -38,7 +38,7 @@ var LiveCoding = (function() {
     if (isCSS) {
       var cssRules = codeElement.textContent;
 
-      // if PrefixFree is here
+      // if Autoprefixer is here
       if (typeof autoprefixer !== "undefined") {
         // prefix code
         cssRules = autoprefixer.process(cssRules).css;
