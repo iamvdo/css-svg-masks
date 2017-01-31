@@ -310,6 +310,22 @@ polygon {
   </div>
 </div>
 
+<!-- mask-image: url() (referencing SVG <mask>, as data:image) -->
+<div class="test" id="js-maskSVGDataImage">
+  <div class="image">
+    <img class="Mask--placeholder" src="image.jpg" alt="">
+    <img class="Mask" src="image.jpg" alt="">
+  </div>
+  <div class="text">
+    <h3 class="title"><code>mask-image: url()</code> <small>(referencing inline SVG <code>&lt;mask></code> as <code>data:image</code>)</small></h3>
+    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGDataImage" contenteditable>
+.Mask {
+  mask-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cmask id="mask" maskContentUnits="objectBoundingBox"%3E%3Crect width="1" height="1" fill="url(%23gradient)"/%3E%3ClinearGradient x2="0" y2="1" id="gradient"%3E%3Cstop offset="25%" stop-color="white" /%3E%3Cstop offset="50%" stop-color="black" /%3E%3C/linearGradient%3E%3C/mask%3E%3C/defs%3E%3C/svg%3E#mask');
+}
+    </code></pre>
+  </div>
+</div>
+
 <!-- mask-image: url() (referencing external SVG <mask>) -->
 <div class="test" id="js-maskSVGExternal">
   <div class="image">
