@@ -43,7 +43,7 @@ a {
   position: relative;
 }
 .image {
-  width: 200px;
+  flex: 0 0 200px;
   height: 200px;
   margin-right: 30px;
   background: hsl(205, 65%, 24%);
