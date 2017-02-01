@@ -34,6 +34,9 @@ var LiveCoding = (function() {
     var isCSS = hasAtLeastOneClass(codeElement, ['css', 'language-css']);
     var isMarkup = hasAtLeastOneClass(codeElement, ['xml', 'language-markup', 'language-xml', 'language-html', 'language-svg']);
 
+    // force layout (bad for perf, good for live results)
+    document.body.classList.toggle('forceLayout');
+
     // if it's CSS
     if (isCSS) {
       var cssRules = codeElement.textContent;
@@ -56,10 +59,6 @@ var LiveCoding = (function() {
         cssRules[i] = selectors.join(',');
       }
       cssRules = cssRules.join('');
-
-      // force layout (bad for perf, good for live results)
-      var el = document.getElementById(demoElementId);
-      el.classList.toggle('forceLayout');
 
       // if <style id="liveCoding_9999"> doesn't exist, create it
       var styleElement = document.getElementById('liveCoding_' + demoElementId);
