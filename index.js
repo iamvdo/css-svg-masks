@@ -7,6 +7,7 @@ const templateFunc = pug.compileFile('./templates/testcase.pug');
 const data = JSON.parse(fs.readFileSync('./testcases/data.json', 'utf-8'));
 let clippingContent = '';
 let maskingContent = '';
+let nb = 1;
 
 for (let key in data.testcases) {
   const dataThemes = data.testcases[key];
@@ -20,13 +21,16 @@ for (let key in data.testcases) {
     testcase.CSS = CSS;
     testcase.sandboxCSS = sandboxCSS;
     testcase.SVG = SVG;
+    testcase.nb = nb;
     const fn = templateFunc(testcase);
     if (key == 'clipping') {
       clippingContent += fn;
     } else if (key == 'masking') {
       maskingContent += fn;
     }
-  })
+    nb++;
+  });
+  
 }
 
 let result = pug.renderFile('./templates/index.pug', {clipping: clippingContent, masking: maskingContent});

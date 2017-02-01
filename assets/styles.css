@@ -55,6 +55,21 @@ a {
 }
 .title {
   margin: 0;
+  display: flex;
+  align-items: center;
+}
+.title-nb {
+  background: hsl(205, 65%, 24%);
+  color: #fff;
+  width: 1.2em;
+  height: 1.2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 1em;
+  font-size: .65em;
+  padding: .5em;
+  border-radius: 50%;
 }
 .note {
   font-size: .8em;
