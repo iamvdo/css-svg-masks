@@ -1,4 +1,4 @@
-#CSS & SVG Masks testcases
+#CSS & SVG Masks testcases on HTML content
 
 See live demo: http://lab.iamvdo.me/css-svg-masks
 
