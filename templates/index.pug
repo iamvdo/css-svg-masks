@@ -40,8 +40,8 @@ html
       |  and 
       code luminance-mask.png
     p
-      img.img-mask(src="alpha-mask.png", alt="")
-      img.img-mask(src="luminance-mask.png" alt="")
+      img.img-mask(src="alpha-mask.png", alt="", width="100", height="100")
+      img.img-mask(src="luminance-mask.png" alt="", width="100", height="100")
 
     .Testcases!= masking
 
@@ -76,7 +76,7 @@ html
       |  per page. See: 
       a(href="https://bugs.webkit.org/show_bug.cgi?id=164181") https://bugs.webkit.org/show_bug.cgi?id=164181
     p <b>Edge</b> has no support at all. :/
-    p CanIUse pages:
+    p CanIUse pages: 
       a(href='http://caniuse.com/#feat=css-clip-path') CSS Clip-path
       |  
       a(href='http://caniuse.com/#feat=css-masks') CSS Masks
