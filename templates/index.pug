@@ -22,6 +22,8 @@ html
       a(href="#clipping") Clipping
       |  
       a(href="#masking") Masking
+      |  
+      a(href="#notes") Notes
 
     h2#clipping Clipping
     p Clipping in CSS can be compared to Photoshop “Vector Masks”. So only vector shapes.
@@ -42,6 +44,42 @@ html
       img.img-mask(src="luminance-mask.png" alt="")
 
     .Testcases!= masking
+
+    h2#notes Notes
+    p <b>Firefox</b> (54) is the only browser to support all testcases in this page. Hooray! (FF53 fails only test 
+      a.nb(href="#test9") 9
+      |)
+    p <b>Chrome</b> supports most testcases, except 
+      a.nb(href="#test6") 6
+      |, 
+      a.nb(href="#test7") 7
+      |, 
+      a.nb(href="#test13") 13
+      |, 
+      a.nb(href="#test14") 14
+      |, 
+      a.nb(href="#test15") 15
+      |, 
+      a.nb(href="#test16") 16
+      |. Tests 
+      a.nb(href="#test9") 9
+      |, 
+      a.nb(href="#test11") 11
+      |  are supported but have weird impact on other tests.
+    p <b>Opera</b> works as Chrome. Except tests 
+      a.nb(href="#test9") 9
+      |, 
+      a.nb(href="#test11") 11
+      |  that fail.
+    p <b>Safari</b> works <i>mostly</i> as Chrome. Except some weird bugs when using more than one 
+      code clip-path
+      |  per page. See: 
+      a(href="https://bugs.webkit.org/show_bug.cgi?id=164181") https://bugs.webkit.org/show_bug.cgi?id=164181
+    p <b>Edge</b> has no support at all. :/
+    p CanIUse pages:
+      a(href='http://caniuse.com/#feat=css-clip-path') CSS Clip-path
+      |  
+      a(href='http://caniuse.com/#feat=css-masks') CSS Masks
 
     script(src='assets/autoprefixer.js')
     script(src='assets/livecoding.js')
