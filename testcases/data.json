@@ -1,0 +1,87 @@
+{
+  "testcases": {
+    "clipping": [
+      {
+        "id": "clip",
+        "title": "clip: rect()",
+        "note": "Property deprecated"
+      },
+      {
+        "id": "clipPathInset",
+        "title": "clip-path: inset()"
+      },
+      {
+        "id": "clipPathCircle",
+        "title": "clip-path: circle()"
+      },
+      {
+        "id": "clipPathPolygon",
+        "title": "clip-path: polygon()"
+      },
+      {
+        "id": "clipPathSVGInline",
+        "title": "clip-path: url()",
+        "subtitle": "Referencing inline SVG <code>&lt;clipPath></code>"
+      },
+      {
+        "id": "clipPathSVGDataImage",
+        "title": "clip-path: url()",
+        "subtitle": "Referencing inline SVG <code>&lt;clipPath></code> as <code>data:image</code>"
+      },
+      {
+        "id": "clipPathSVGExternal",
+        "title": "clip-path: url()",
+        "subtitle": "Referencing external SVG <code>&lt;clipPath></code>"
+      }
+    ],
+    "masking": [
+      {
+        "id": "maskImageGradient",
+        "title": "mask-image: linear-gradient()",
+        "subtitle": "Using (default) alpha mask"
+      },
+      {
+        "id": "maskImageGradientLuminance",
+        "title": "mask-image: linear-gradient()",
+        "subtitle": "Forcing luminance mask",
+        "note": "If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content."
+      },
+      {
+        "id": "maskImageUrl",
+        "title": "mask-image: url()",
+        "subtitle": "Using (default) alpha mask"
+      },
+      {
+        "id": "maskImageUrlLuminance",
+        "title": "mask-image: url()",
+        "subtitle": "Forcing luminance mask",
+        "note": "If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content."
+      },
+      {
+        "id": "maskProperties",
+        "title": "mask-*",
+        "subtitle": "Like all <code>background-*</code> properties"
+      },
+      {
+        "id": "maskSVGInline",
+        "title": "mask-image: url()",
+        "subtitle": "Referencing inline SVG <code>&lt;mask></code>, using (default) luminance mask"
+      },
+      {
+        "id": "maskSVGInlineAlpha",
+        "title": "mask-image: url()",
+        "subtitle": "Referencing inline SVG <code>&lt;mask></code>, forcing alpha mask"
+      },
+      {
+        "id": "maskSVGDataImage",
+        "title": "mask-image: url()",
+        "subtitle": "Referencing inline SVG <code>&lt;mask></code> as <code>data:image</code>"
+      },
+      {
+        "id": "maskSVGExternal",
+        "title": "mask-image: url()",
+        "subtitle": "Referencing external SVG <code>&lt;mask></code>"
+      }
+    ]
+  }
+}

@@ -1,0 +1,4 @@
+.Mask {
+  position: absolute;
+  clip: rect(30px, 170px, 170px, 30px);
+}

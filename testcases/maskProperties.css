@@ -1,0 +1,5 @@
+.Mask {
+  mask-image: url(alpha-mask.png);
+  mask-size: 50%;
+  mask-repeat: round;
+}

@@ -1,0 +1,7 @@
+.Mask {
+  clip-path: url(#clipPath);
+}
+polygon {
+  clip-rule: nonzero;
+  //clip-rule: evenodd;
+}

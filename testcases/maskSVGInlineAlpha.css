@@ -1,0 +1,6 @@
+.Mask {
+  mask-image: url(#maskMaskSource);
+}
+.MaskType {
+  mask-type: alpha;
+}

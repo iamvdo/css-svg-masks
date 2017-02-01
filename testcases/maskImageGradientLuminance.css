@@ -1,0 +1,6 @@
+.Mask {
+  mask-image: linear-gradient(white 25%, black 50%);
+  mask-mode: luminance;
+  /* old WebKit */
+  //mask-source-type: luminance;
+}

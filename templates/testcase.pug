@@ -1,0 +1,23 @@
+- var jsId = 'js-' + id;
+- var svgId = 'svg-' + id;
+.testcase(id=jsId)
+  style(id='liveCoding_js-' + id)= sandboxCSS
+  .image
+    img.Mask--placeholder(src='assets/image.jpg')
+    img.Mask(src='assets/image.jpg')
+  .text
+    h3.title
+      code= title
+    if subtitle
+      p!= subtitle
+    if SVG
+      svg(id=svgId)!= SVG
+      pre
+        code.code.liveCoding.xml(data-livecoding-id=svgId, contenteditable="true")= '\n' + SVG + '\n\n'
+    if CSS
+      pre
+        code.code.liveCoding.css(data-livecoding-id=jsId, contenteditable="true")= '\n' + CSS + '\n\n'
+    if note
+      p
+        b Note:
+        |  !{note}

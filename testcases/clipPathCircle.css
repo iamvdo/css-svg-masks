@@ -1,0 +1,4 @@
+.Mask {
+  clip-path: circle(75px at center);
+  //clip-path: circle(closest-side at 50px 50px);
+}

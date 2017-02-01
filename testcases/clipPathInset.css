@@ -1,0 +1,4 @@
+.Mask {
+  clip-path: inset(30px 30px);
+  //clip-path: inset(30px 20px 50px 0);
+}

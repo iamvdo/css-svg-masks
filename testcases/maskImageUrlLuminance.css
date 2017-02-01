@@ -1,0 +1,6 @@
+.Mask {
+  mask-image: url(luminance-mask.png);
+  mask-mode: luminance;
+  /* old WebKit */
+  //mask-source-type: luminance;
+}

@@ -1,112 +1,57 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>CSS & SVG Masks on HTML content</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="http://iamvdo.me/images/favicon.png">
-</head>
-<body>
-
-<h1>CSS & SVG Masks</h1>
-<p class="baseline">Testcases. See <a href="https://drafts.fxtf.org/css-masking-1/">CSS Masking Level 1</a></p>
-<p class="note">Made by <a href="https://twitter.com/iamvdo">@iamvdo</a> - Code on <a href="https://github.com/iamvdo/css-svg-masks">GitHub</a></p>
-
-<p>All code blocks are editable and with live view</p>
-
-<p>In the page: 
-<a href="#clipping">#Clipping</a>
-<a href="#masking">#Masking</a>
-</p>
-
-<h2 id="clipping">Clipping</h2>
-<p>Clipping in CSS can be compared to Photoshop “Vector Masks”. So only vector shapes.</p>
-
-<!-- clip() -->
-<div class="test" id="js-maskClip">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask Mask--clip" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>clip: rect()</code></h3>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskClip" contenteditable>
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>CSS & SVG Masks (Testcases)</title><link rel="stylesheet" href="assets/styles.css"><link rel="icon" href="http://iamvdo.me/images/favicon.png"></head><body><h1>CSS & SVG Masks</h1><p class="baseline">Testcases. See <a href="https://drafts.fxtf.org/css-masking-1/">CSS Masking Level 1</a></p><p class="note">Made by <a href="https://twitter.com/iamvdo">@iamvdo</a> - Code on <a href="https://github.com/iamvdo/css-svg-masks">GitHub</a></p><p>All code blocks are editable and with live view. Prefixes are required for some testcases, but are automatically added by Autoprefixer for convenience.</p><h2 id="clipping">Clipping</h2><p>Clipping in CSS can be compared to Photoshop “Vector Masks”. So only vector shapes.</p><div class="Testcases"><div class="testcase" id="js-clip"><style id="liveCoding_js-clip">#js-clip .Mask {
+  position: absolute;
+  clip: rect(30px, 170px, 170px, 30px);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>clip: rect()</code></h3><pre><code class="code liveCoding css" data-livecoding-id="js-clip" contenteditable="true">
 .Mask {
   position: absolute;
   clip: rect(30px, 170px, 170px, 30px);
 }
-    </code></pre>
-    <p><b>Note: </b>Property deprecated</p>
-  </div>
-</div>
 
-<!-- clip-path: inset() -->
-<div class="test" id="js-clipPathRect">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>clip-path: inset()</code></h3>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathRect" contenteditable>
+</code></pre><p><b>Note:</b> Property deprecated</p></div></div><div class="testcase" id="js-clipPathInset"><style id="liveCoding_js-clipPathInset">#js-clipPathInset .Mask {
+  -webkit-clip-path: inset(30px 30px);
+          clip-path: inset(30px 30px);
+  //clip-path: inset(30px 20px 50px 0);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>clip-path: inset()</code></h3><pre><code class="code liveCoding css" data-livecoding-id="js-clipPathInset" contenteditable="true">
 .Mask {
   clip-path: inset(30px 30px);
   //clip-path: inset(30px 20px 50px 0);
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- clip-path: circle() -->
-<div class="test" id="js-clipPathCircle">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask Mask--clipPath" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>clip-path: circle()</code></h3>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathCircle" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-clipPathCircle"><style id="liveCoding_js-clipPathCircle">#js-clipPathCircle .Mask {
+  -webkit-clip-path: circle(75px at center);
+          clip-path: circle(75px at center);
+  //clip-path: circle(closest-side at 50px 50px);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>clip-path: circle()</code></h3><pre><code class="code liveCoding css" data-livecoding-id="js-clipPathCircle" contenteditable="true">
 .Mask {
   clip-path: circle(75px at center);
   //clip-path: circle(closest-side at 50px 50px);
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- clip-path: polygon() -->
-<div class="test" id="js-clipPathPolygon">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask Mask--clipPath" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>clip-path: polygon()</code></h3>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathPolygon" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-clipPathPolygon"><style id="liveCoding_js-clipPathPolygon">#js-clipPathPolygon .Mask {
+  -webkit-clip-path: polygon(50% 0%, 80% 100%, 0 40%, 100% 40%, 20% 100%);
+          clip-path: polygon(50% 0%, 80% 100%, 0 40%, 100% 40%, 20% 100%);
+  //clip-path: polygon(evenodd, 50% 0%, 80% 100%, 0 40%, 100% 40%, 20% 100%);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>clip-path: polygon()</code></h3><pre><code class="code liveCoding css" data-livecoding-id="js-clipPathPolygon" contenteditable="true">
 .Mask {
   clip-path: polygon(50% 0%, 80% 100%, 0 40%, 100% 40%, 20% 100%);
   //clip-path: polygon(evenodd, 50% 0%, 80% 100%, 0 40%, 100% 40%, 20% 100%);
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- clip-path: url() (referencing SVG <clipPath>) -->
-<div class="test" id="js-clipPathSVG">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>clip-path: url()</code></h3>
-    <p>Referencing inline SVG <code>&lt;clipPath></code></p>
-    <svg id="svg-clipPathSVG"></svg>
-    <pre><code class="code liveCoding xml" data-livecoding-id="svg-clipPathSVG" contenteditable>
-&lt;clipPath id="clipPath" clipPathUnits="objectBoundingBox">
-  &lt;polygon points=".5,0 .8,1 0,.4 1,.4 .2,1" />
-&lt;/clipPath>
-    </code></pre>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVG" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-clipPathSVGInline"><style id="liveCoding_js-clipPathSVGInline">#js-clipPathSVGInline .Mask {
+  -webkit-clip-path: url(#clipPath);
+          clip-path: url(#clipPath);
+}#js-clipPathSVGInline 
+polygon {
+  clip-rule: nonzero;
+  //clip-rule: evenodd;
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>clip-path: url()</code></h3><p>Referencing inline SVG <code>&lt;clipPath></code></p><svg id="svg-clipPathSVGInline"><clipPath id="clipPath" clipPathUnits="objectBoundingBox">
+  <polygon points=".5,0 .8,1 0,.4 1,.4 .2,1" />
+</clipPath></svg><pre><code class="code liveCoding xml" data-livecoding-id="svg-clipPathSVGInline" contenteditable="true">
+&lt;clipPath id=&quot;clipPath&quot; clipPathUnits=&quot;objectBoundingBox&quot;&gt;
+  &lt;polygon points=&quot;.5,0 .8,1 0,.4 1,.4 .2,1&quot; /&gt;
+&lt;/clipPath&gt;
+
+</code></pre><pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGInline" contenteditable="true">
 .Mask {
   clip-path: url(#clipPath);
 }
@@ -114,255 +59,147 @@ polygon {
   clip-rule: nonzero;
   //clip-rule: evenodd;
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- clip-path: url() (SVG <clipPath> as data) -->
-<div class="test" id="js-clipPathSVGDataImage">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>clip-path: url()</code></h3>
-    <p>Referencing inline SVG <code>&lt;clipPath></code> as <code>data:image</code></p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGDataImage" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-clipPathSVGDataImage"><style id="liveCoding_js-clipPathSVGDataImage">#js-clipPathSVGDataImage .Mask {
+  -webkit-clip-path: url('data:image/svg+xml;utf8,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cdefs%3E%3CclipPath id=&quot;clipPath&quot; clipPathUnits=&quot;objectBoundingBox&quot;%3E%3Cpolygon points=&quot;.5,0 .8,1 0,.4 1,.4 .2,1&quot; /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#clipPath');
+          clip-path: url('data:image/svg+xml;utf8,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cdefs%3E%3CclipPath id=&quot;clipPath&quot; clipPathUnits=&quot;objectBoundingBox&quot;%3E%3Cpolygon points=&quot;.5,0 .8,1 0,.4 1,.4 .2,1&quot; /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#clipPath');
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>clip-path: url()</code></h3><p>Referencing inline SVG <code>&lt;clipPath></code> as <code>data:image</code></p><pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGDataImage" contenteditable="true">
 .Mask {
-  clip-path: url('data:image/svg+xml;utf8,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3CclipPath id="clipPath" clipPathUnits="objectBoundingBox"%3E%3Cpolygon points=".5,0 .8,1 0,.4 1,.4 .2,1" /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#clipPath');
+  clip-path: url('data:image/svg+xml;utf8,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cdefs%3E%3CclipPath id=&quot;clipPath&quot; clipPathUnits=&quot;objectBoundingBox&quot;%3E%3Cpolygon points=&quot;.5,0 .8,1 0,.4 1,.4 .2,1&quot; /%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E#clipPath');
 }
-    </code></pre>
-    <p>There is a <a href="https://github.com/komachi/postcss-clip-path-polyfill">PostCSS plugin</a></p>
-  </div>
-</div>
 
-<!-- clip-path: url() (referencing external SVG <clipPath>) -->
-<div class="test" id="js-clipPathSVGExternal">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>clip-path: url()</code></h3>
-    <p>Referencing external SVG <code>&lt;clipPath></code></p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGExternal" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-clipPathSVGExternal"><style id="liveCoding_js-clipPathSVGExternal">#js-clipPathSVGExternal .Mask {
+  -webkit-clip-path: url(masks.svg#clipPath);
+          clip-path: url(masks.svg#clipPath);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>clip-path: url()</code></h3><p>Referencing external SVG <code>&lt;clipPath></code></p><pre><code class="code liveCoding css" data-livecoding-id="js-clipPathSVGExternal" contenteditable="true">
 .Mask {
   clip-path: url(masks.svg#clipPath);
 }
-    </code></pre>
-  </div>
-</div>
 
-<h2 id="masking">Masking</h2>
-<p>Masking in CSS can be compared to Photoshop masks, as follow:
-<ul>
-  <li>Alpha masks are Photoshop “Clipping Masks”: transparency matters. This is the default for CSS masks.</li>
-  <li>Luminance masks are Photoshop “Layer Masks”: white and black matter. This is the default for SVG masks.</li>
-</ul>
-
-<!-- mask-image: linear-gradient() (using default alpha mask) -->
-<div class="test" id="js-maskImageGradient">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: linear-gradient()</code></h3>
-    <p>Using (default) alpha mask</p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageGradient" contenteditable>
+</code></pre></div></div></div><h2 id="masking">Masking</h2><p>Masking in CSS can be compared to Photoshop masks, as follow:</p><ul><li>Alpha masks are Photoshop “Clipping Masks”: transparency matters. This is the default for CSS masks.</li><li>Luminance masks are Photoshop “Layer Masks”: white and black matter. This is the default for SVG masks.</li></ul><p>Here are masks images used on some testcases below: <code>alpha-mask.png</code> and <code>luminance-mask.png</code></p><p><img class="img-mask" src="alpha-mask.png" alt=""><img class="img-mask" src="luminance-mask.png" alt=""></p><div class="Testcases"><div class="testcase" id="js-maskImageGradient"><style id="liveCoding_js-maskImageGradient">#js-maskImageGradient .Mask {
+  -webkit-mask-image: -webkit-linear-gradient(black 25%, transparent 50%);
+          mask-image: linear-gradient(black 25%, transparent 50%);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: linear-gradient()</code></h3><p>Using (default) alpha mask</p><pre><code class="code liveCoding css" data-livecoding-id="js-maskImageGradient" contenteditable="true">
 .Mask {
   mask-image: linear-gradient(black 25%, transparent 50%);
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- mask-image: linear-gradient() (force luminance mask) -->
-<div class="test" id="js-maskImageGradientLuminance">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: linear-gradient()</code></h3>
-    <p>Forcing luminance mask</p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageGradientLuminance" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-maskImageGradientLuminance"><style id="liveCoding_js-maskImageGradientLuminance">#js-maskImageGradientLuminance .Mask {
+  -webkit-mask-image: -webkit-linear-gradient(white 25%, black 50%);
+          mask-image: linear-gradient(white 25%, black 50%);
+  mask-mode: luminance;
+  /* old WebKit */
+  //mask-source-type: luminance;
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: linear-gradient()</code></h3><p>Forcing luminance mask</p><pre><code class="code liveCoding css" data-livecoding-id="js-maskImageGradientLuminance" contenteditable="true">
 .Mask {
   mask-image: linear-gradient(white 25%, black 50%);
   mask-mode: luminance;
   /* old WebKit */
   //mask-source-type: luminance;
 }
-    </code></pre>
-    <p><b>Note:</b> If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content.</p>
-  </div>
-</div>
 
-<p>Here are masks images used below: <code>alpha-mask.png</code> and <code>luminance-mask.png</code></p>
-<p><img class="img-mask" src="alpha-mask.png" alt=""><img class="img-mask" src="luminance-mask.png" alt=""></p>
-
-<!-- mask-image: url() (using alpha mask) -->
-<div class="test" id="js-maskImageUrl">
-  <style>
-  #js-maskImageUrl .Mask {
-    -webkit-mask-size: cover;
-    mask-size: cover;
-  }
-  </style>
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: url()</code></h3>
-    <p>Using (default) alpha mask</p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageUrl" contenteditable>
+</code></pre><p><b>Note:</b> If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content.</p></div></div><div class="testcase" id="js-maskImageUrl"><style id="liveCoding_js-maskImageUrl">#js-maskImageUrl .Mask {
+  -webkit-mask-image: url(alpha-mask.png);
+          mask-image: url(alpha-mask.png);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: url()</code></h3><p>Using (default) alpha mask</p><pre><code class="code liveCoding css" data-livecoding-id="js-maskImageUrl" contenteditable="true">
 .Mask {
   mask-image: url(alpha-mask.png);
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- mask-image: url() (using alpha mask) -->
-<div class="test" id="js-maskImageUrlLuminance">
-  <style>
-  #js-maskImageUrlLuminance .Mask {
-    -webkit-mask-size: cover;
-    mask-size: cover;
-  }
-  </style>
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: url()</code></h3>
-    <p>Forcing luminance mask</p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskImageUrlLuminance" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-maskImageUrlLuminance"><style id="liveCoding_js-maskImageUrlLuminance">#js-maskImageUrlLuminance .Mask {
+  -webkit-mask-image: url(luminance-mask.png);
+          mask-image: url(luminance-mask.png);
+  mask-mode: luminance;
+  /* old WebKit */
+  //mask-source-type: luminance;
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: url()</code></h3><p>Forcing luminance mask</p><pre><code class="code liveCoding css" data-livecoding-id="js-maskImageUrlLuminance" contenteditable="true">
 .Mask {
   mask-image: url(luminance-mask.png);
   mask-mode: luminance;
   /* old WebKit */
   //mask-source-type: luminance;
 }
-    </code></pre>
-    <p><b>Note:</b> If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content.</p>
-  </div>
-</div>
 
-<!-- mask-* -->
-<div class="test" id="js-maskProperties">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-*</code></h3>
-    <p>Like <code>background-*</code> properties</p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskProperties" contenteditable>
+</code></pre><p><b>Note:</b> If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content.</p></div></div><div class="testcase" id="js-maskProperties"><style id="liveCoding_js-maskProperties">#js-maskProperties .Mask {
+  -webkit-mask-image: url(alpha-mask.png);
+          mask-image: url(alpha-mask.png);
+  -webkit-mask-size: 50%;
+          mask-size: 50%;
+  -webkit-mask-repeat: round;
+          mask-repeat: round;
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-*</code></h3><p>Like all <code>background-*</code> properties</p><pre><code class="code liveCoding css" data-livecoding-id="js-maskProperties" contenteditable="true">
 .Mask {
   mask-image: url(alpha-mask.png);
   mask-size: 50%;
   mask-repeat: round;
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- mask-image: url() (referencing SVG <mask>, using default luminance mask) -->
-<div class="test" id="js-maskSVG">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: url()</code></h3>
-    <p>Referencing inline SVG <code>&lt;mask></code>, using (default) luminance mask</p>
-    <svg id="svg-maskSVG"></svg>
-    <pre><code class="code liveCoding xml" data-livecoding-id="svg-maskSVG" contenteditable>
-&lt;mask id="mask" maskContentUnits="objectBoundingBox">
-  &lt;rect width="1" height="1" fill="url(#gradient)"/>
-  &lt;linearGradient x2="0" y2="1" id="gradient">
-    &lt;stop offset="25%" stop-color="white" />
-    &lt;stop offset="50%" stop-color="black" />
-  &lt;/linearGradient>
-&lt;/mask>
-    </code></pre>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVG" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-maskSVGInline"><style id="liveCoding_js-maskSVGInline">#js-maskSVGInline .Mask {
+  -webkit-mask-image: url(#mask);
+          mask-image: url(#mask);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: url()</code></h3><p>Referencing inline SVG <code>&lt;mask></code>, using (default) luminance mask</p><svg id="svg-maskSVGInline"><mask id="mask" maskContentUnits="objectBoundingBox">
+  <rect width="1" height="1" fill="url(#gradient)"/>
+  <linearGradient x2="0" y2="1" id="gradient">
+    <stop offset="25%" stop-color="white" />
+    <stop offset="50%" stop-color="black" />
+  </linearGradient>
+</mask></svg><pre><code class="code liveCoding xml" data-livecoding-id="svg-maskSVGInline" contenteditable="true">
+&lt;mask id=&quot;mask&quot; maskContentUnits=&quot;objectBoundingBox&quot;&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;1&quot; fill=&quot;url(#gradient)&quot;/&gt;
+  &lt;linearGradient x2=&quot;0&quot; y2=&quot;1&quot; id=&quot;gradient&quot;&gt;
+    &lt;stop offset=&quot;25%&quot; stop-color=&quot;white&quot; /&gt;
+    &lt;stop offset=&quot;50%&quot; stop-color=&quot;black&quot; /&gt;
+  &lt;/linearGradient&gt;
+&lt;/mask&gt;
+
+</code></pre><pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGInline" contenteditable="true">
 .Mask {
   mask-image: url(#mask);
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- mask-image: url() (referencing SVG <mask>, forcing alpha mask) -->
-<div class="test" id="js-maskSVGMaskType">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: url()</code></h3>
-    <p>Referencing inline SVG <code>&lt;mask></code>, forcing alpha mask</p>
-    <svg id="svg-maskSVGMaskType"></svg>
-    <pre><code class="code liveCoding xml" data-livecoding-id="svg-maskSVGMaskType" contenteditable>
-&lt;mask id="maskMaskSource" class="MaskType" maskContentUnits="objectBoundingBox">
-  &lt;rect width="1" height="1" fill="url(#gradientMaskSource)"/>
-  &lt;linearGradient x2="0" y2="1" id="gradientMaskSource">
-    &lt;stop offset="25%" stop-color="black" />
-    &lt;stop offset="50%" stop-color="transparent" />
-  &lt;/linearGradient>
-&lt;/mask>
-    </code></pre>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGMaskType" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-maskSVGInlineAlpha"><style id="liveCoding_js-maskSVGInlineAlpha">#js-maskSVGInlineAlpha .Mask {
+  -webkit-mask-image: url(#maskMaskSource);
+          mask-image: url(#maskMaskSource);
+}#js-maskSVGInlineAlpha 
+.MaskType {
+  mask-type: alpha;
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: url()</code></h3><p>Referencing inline SVG <code>&lt;mask></code>, forcing alpha mask</p><svg id="svg-maskSVGInlineAlpha"><mask id="maskMaskSource" class="MaskType" maskContentUnits="objectBoundingBox">
+  <rect width="1" height="1" fill="url(#gradientMaskSource)"/>
+  <linearGradient x2="0" y2="1" id="gradientMaskSource">
+    <stop offset="25%" stop-color="black" />
+    <stop offset="50%" stop-color="transparent" />
+  </linearGradient>
+</mask></svg><pre><code class="code liveCoding xml" data-livecoding-id="svg-maskSVGInlineAlpha" contenteditable="true">
+&lt;mask id=&quot;maskMaskSource&quot; class=&quot;MaskType&quot; maskContentUnits=&quot;objectBoundingBox&quot;&gt;
+  &lt;rect width=&quot;1&quot; height=&quot;1&quot; fill=&quot;url(#gradientMaskSource)&quot;/&gt;
+  &lt;linearGradient x2=&quot;0&quot; y2=&quot;1&quot; id=&quot;gradientMaskSource&quot;&gt;
+    &lt;stop offset=&quot;25%&quot; stop-color=&quot;black&quot; /&gt;
+    &lt;stop offset=&quot;50%&quot; stop-color=&quot;transparent&quot; /&gt;
+  &lt;/linearGradient&gt;
+&lt;/mask&gt;
+
+</code></pre><pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGInlineAlpha" contenteditable="true">
 .Mask {
   mask-image: url(#maskMaskSource);
 }
 .MaskType {
   mask-type: alpha;
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- mask-image: url() (referencing SVG <mask>, as data:image) -->
-<div class="test" id="js-maskSVGDataImage">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: url()</code></h3>
-    <p>Referencing inline SVG <code>&lt;mask></code> as <code>data:image</code></p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGDataImage" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-maskSVGDataImage"><style id="liveCoding_js-maskSVGDataImage">#js-maskSVGDataImage .Mask {
+  -webkit-mask-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cdefs%3E%3Cmask id=&quot;mask&quot; maskContentUnits=&quot;objectBoundingBox&quot;%3E%3Crect width=&quot;1&quot; height=&quot;1&quot; fill=&quot;url(%23gradient)&quot;/%3E%3ClinearGradient x2=&quot;0&quot; y2=&quot;1&quot; id=&quot;gradient&quot;%3E%3Cstop offset=&quot;25%&quot; stop-color=&quot;white&quot; /%3E%3Cstop offset=&quot;50%&quot; stop-color=&quot;black&quot; /%3E%3C/linearGradient%3E%3C/mask%3E%3C/defs%3E%3C/svg%3E#mask');
+          mask-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cdefs%3E%3Cmask id=&quot;mask&quot; maskContentUnits=&quot;objectBoundingBox&quot;%3E%3Crect width=&quot;1&quot; height=&quot;1&quot; fill=&quot;url(%23gradient)&quot;/%3E%3ClinearGradient x2=&quot;0&quot; y2=&quot;1&quot; id=&quot;gradient&quot;%3E%3Cstop offset=&quot;25%&quot; stop-color=&quot;white&quot; /%3E%3Cstop offset=&quot;50%&quot; stop-color=&quot;black&quot; /%3E%3C/linearGradient%3E%3C/mask%3E%3C/defs%3E%3C/svg%3E#mask');
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: url()</code></h3><p>Referencing inline SVG <code>&lt;mask></code> as <code>data:image</code></p><pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGDataImage" contenteditable="true">
 .Mask {
-  mask-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3Cdefs%3E%3Cmask id="mask" maskContentUnits="objectBoundingBox"%3E%3Crect width="1" height="1" fill="url(%23gradient)"/%3E%3ClinearGradient x2="0" y2="1" id="gradient"%3E%3Cstop offset="25%" stop-color="white" /%3E%3Cstop offset="50%" stop-color="black" /%3E%3C/linearGradient%3E%3C/mask%3E%3C/defs%3E%3C/svg%3E#mask');
+  mask-image: url('data:image/svg+xml;utf-8,%3Csvg xmlns=&quot;http://www.w3.org/2000/svg&quot;%3E%3Cdefs%3E%3Cmask id=&quot;mask&quot; maskContentUnits=&quot;objectBoundingBox&quot;%3E%3Crect width=&quot;1&quot; height=&quot;1&quot; fill=&quot;url(%23gradient)&quot;/%3E%3ClinearGradient x2=&quot;0&quot; y2=&quot;1&quot; id=&quot;gradient&quot;%3E%3Cstop offset=&quot;25%&quot; stop-color=&quot;white&quot; /%3E%3Cstop offset=&quot;50%&quot; stop-color=&quot;black&quot; /%3E%3C/linearGradient%3E%3C/mask%3E%3C/defs%3E%3C/svg%3E#mask');
 }
-    </code></pre>
-  </div>
-</div>
 
-<!-- mask-image: url() (referencing external SVG <mask>) -->
-<div class="test" id="js-maskSVGExternal">
-  <div class="image">
-    <img class="Mask--placeholder" src="image.jpg" alt="">
-    <img class="Mask" src="image.jpg" alt="">
-  </div>
-  <div class="text">
-    <h3 class="title"><code>mask-image: url()</code></h3>
-    <p>Referencing external SVG <code>&lt;mask></code></p>
-    <pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGExternal" contenteditable>
+</code></pre></div></div><div class="testcase" id="js-maskSVGExternal"><style id="liveCoding_js-maskSVGExternal">#js-maskSVGExternal .Mask {
+  -webkit-mask-image: url(masks.svg#mask);
+          mask-image: url(masks.svg#mask);
+}</style><div class="image"><img class="Mask--placeholder" src="assets/image.jpg"/><img class="Mask" src="assets/image.jpg"/></div><div class="text"><h3 class="title"><code>mask-image: url()</code></h3><p>Referencing external SVG <code>&lt;mask></code></p><pre><code class="code liveCoding css" data-livecoding-id="js-maskSVGExternal" contenteditable="true">
 .Mask {
   mask-image: url(masks.svg#mask);
 }
-    </code></pre>
-  </div>
-</div>
 
-  <script src="https://rawgit.com/ai/autoprefixer-rails/master/vendor/autoprefixer.js"></script>
-  <script src="livecoding.js"></script>
-
-</body>
-</html>
+</code></pre></div></div></div><script src="assets/autoprefixer.js"></script><script src="assets/livecoding.js"></script></body></html>

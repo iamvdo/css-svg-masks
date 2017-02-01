@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title CSS & SVG Masks (Testcases)
+    link(rel="stylesheet", href="assets/styles.css")
+    link(rel="icon", href="http://iamvdo.me/images/favicon.png")
+  body
+    h1 CSS & SVG Masks
+    p.baseline Testcases. See 
+      a(href="https://drafts.fxtf.org/css-masking-1/") CSS Masking Level 1
+    p.note Made by 
+      a(href="https://twitter.com/iamvdo") @iamvdo
+      |  - Code on 
+      a(href="https://github.com/iamvdo/css-svg-masks") GitHub
+    p All code blocks are editable and with live view. Prefixes are required for some testcases, but are automatically added by Autoprefixer for convenience.
+
+    h2#clipping Clipping
+    p Clipping in CSS can be compared to Photoshop “Vector Masks”. So only vector shapes.
+
+    .Testcases!= clipping
+
+    h2#masking Masking
+    p Masking in CSS can be compared to Photoshop masks, as follow:
+    ul
+      li Alpha masks are Photoshop “Clipping Masks”: transparency matters. This is the default for CSS masks.
+      li Luminance masks are Photoshop “Layer Masks”: white and black matter. This is the default for SVG masks.
+    p Here are masks images used on some testcases below: 
+      code alpha-mask.png
+      |  and 
+      code luminance-mask.png
+    p
+      img.img-mask(src="alpha-mask.png", alt="")
+      img.img-mask(src="luminance-mask.png" alt="")
+
+    .Testcases!= masking
+
+    script(src='assets/autoprefixer.js')
+    script(src='assets/livecoding.js')

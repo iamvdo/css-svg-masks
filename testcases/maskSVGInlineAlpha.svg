@@ -1,0 +1,7 @@
+<mask id="maskMaskSource" class="MaskType" maskContentUnits="objectBoundingBox">
+  <rect width="1" height="1" fill="url(#gradientMaskSource)"/>
+  <linearGradient x2="0" y2="1" id="gradientMaskSource">
+    <stop offset="25%" stop-color="black" />
+    <stop offset="50%" stop-color="transparent" />
+  </linearGradient>
+</mask>

@@ -36,7 +36,7 @@ a {
   font-style: italic;
   font-size: 1.1em;
 }
-.test {
+.testcase {
   display: flex;
   margin: 50px 0;
 }
@@ -81,7 +81,6 @@ linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 25%, transparent 75%, rg
   background-position: 0 0, 5px 5px;
 }
 
-
 .Mask--placeholder {
   position: absolute;
   opacity: .1;
@@ -89,3 +88,5 @@ linear-gradient(45deg, rgba(0,0,0,.25) 25%, transparent 25%, transparent 75%, rg
 .image:hover .Mask--placeholder {
   opacity: 0;
 }
+
+/* no JS */
