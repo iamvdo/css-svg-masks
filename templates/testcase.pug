@@ -8,7 +8,7 @@
   .text
     h3.title
       code= title
-      span.title-nb= nb
+      a(id='test' + nb, href="#test" + nb).nb= nb
     if subtitle
       p!= subtitle
     if SVG

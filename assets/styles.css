@@ -58,18 +58,21 @@ a {
   display: flex;
   align-items: center;
 }
-.title-nb {
+.title code {
+  margin-right: 1em;
+}
+.nb {
   background: hsl(205, 65%, 24%);
   color: #fff;
   width: 1.2em;
   height: 1.2em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 1em;
+  display: inline-block;
   font-size: .65em;
   padding: .5em;
   border-radius: 50%;
+  text-decoration: none;
+  text-align: center;
+  vertical-align: 2px;
 }
 .note {
   font-size: .8em;
