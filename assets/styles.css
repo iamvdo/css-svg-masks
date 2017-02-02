@@ -77,9 +77,6 @@ a {
 .note {
   font-size: .8em;
 }
-.note a {
-  
-}
 .code {
   display: block;
   padding: 0 .5em;
@@ -90,6 +87,9 @@ a {
   color: #fff;
   text-shadow: 0 1px 2px rgba(0,0,0,.4);
   border-radius: 3px;
+}
+.footer {
+  margin-top: 50px;
 }
 .img-mask {
   width: 100px;

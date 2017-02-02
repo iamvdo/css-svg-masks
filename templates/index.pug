@@ -8,12 +8,7 @@ html
     link(rel="icon", href="http://iamvdo.me/images/favicon.png")
   body
     h1 CSS & SVG Masks
-    p.baseline Testcases on HTML content. See 
-      a(href="https://drafts.fxtf.org/css-masking-1/") CSS Masking Level 1
-    p.note Made by 
-      a(href="https://twitter.com/iamvdo") @iamvdo
-      |  - Code on 
-      a(href="https://github.com/iamvdo/css-svg-masks") GitHub
+    p.baseline Testcases on HTML content
     p
       b All code blocks are real-time editable
       |. Prefixes are required for some testcases, but are automatically added by Autoprefixer for convenience.
@@ -73,13 +68,24 @@ html
       |  that fail.
     p <b>Safari</b> works <i>mostly</i> as Chrome. Except some weird bugs when using more than one 
       code clip-path
-      |  per page. See: 
-      a(href="https://bugs.webkit.org/show_bug.cgi?id=164181") https://bugs.webkit.org/show_bug.cgi?id=164181
-    p <b>Edge</b> has no support at all. :/
+      |  per page. See this 
+      a(href="https://bugs.webkit.org/show_bug.cgi?id=164181") WebKit bug
+    p <b>Edge</b> has no support at all. :/ 
+      a(href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6261341-css-masking") Vote for it
     p CanIUse pages: 
       a(href='http://caniuse.com/#feat=css-clip-path') CSS Clip-path
       |  
       a(href='http://caniuse.com/#feat=css-masks') CSS Masks
+
+    p.note.footer Made by 
+      a(href="https://twitter.com/iamvdo") @iamvdo
+      |  - 
+      a(href="https://iamvdo.me") iamvdo.me
+      |  - Code on 
+      a(href="https://github.com/iamvdo/css-svg-masks") GitHub
+      |  - Spec: 
+      a(href="https://drafts.fxtf.org/css-masking-1/") CSS Masking Level 1
+    
 
     script(src='assets/autoprefixer.js')
     script(src='assets/livecoding.js')
