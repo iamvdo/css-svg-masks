@@ -9,7 +9,7 @@ html
     link(rel="icon", href="http://iamvdo.me/images/favicon.png")
   body
     h1 CSS & SVG Masks
-    p.baseline Test cases on HTML content
+    p.baseline Test cases on HTML/SVG content
     p
       b All code blocks are real-time editable
       |. Prefixes are required for some test cases, but are automatically added by Autoprefixer for convenience.
@@ -43,36 +43,42 @@ html
 
     h2#notes Notes
     p <b>Firefox</b> (53) supports all test cases in this page, except test 
-      a.nb(href="#test9") 9
+      a.nb(href="#testM2") M2
       |. So Hooray!
-    p <b>Chrome</b> supports most test cases, except 
-      a.nb(href="#test6") 6
+    p <b>Chrome</b> supports many test cases, except 
+      a.nb(href="#testC6") C6
       |, 
-      a.nb(href="#test7") 7
+      a.nb(href="#testC7") C7
       |, 
-      a.nb(href="#test13") 13
+      a.nb(href="#testM6") M6
       |, 
-      a.nb(href="#test14") 14
+      a.nb(href="#testM7") M7
       |, 
-      a.nb(href="#test15") 15
+      a.nb(href="#testM8") M8
       |, 
-      a.nb(href="#test16") 16
+      a.nb(href="#testM9") M9
+      |, 
+      a.nb(href="#testM10") M10
       |. Tests 
-      a.nb(href="#test9") 9
+      a.nb(href="#testM2") M2
       |, 
-      a.nb(href="#test11") 11
-      |  are supported but have weird impact on other tests.
+      a.nb(href="#testM4") M4
+      |  are almost supported but have weird impact on other tests.
     p <b>Opera</b> works as Chrome. Except tests 
-      a.nb(href="#test9") 9
+      a.nb(href="#testM2") M2
       |, 
-      a.nb(href="#test11") 11
+      a.nb(href="#testM4") M4
       |  that fail.
     p <b>Safari</b> works <i>mostly</i> as Chrome. Except some weird bugs when using more than one 
       code clip-path
       |  per page. See this 
       a(href="https://bugs.webkit.org/show_bug.cgi?id=164181") WebKit bug
-    p <b>Edge</b> has no support at all. :/ 
-      a(href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6261341-css-masking") Vote for it
+    p <b>Edge</b> has no support at all. :/ Supports only 
+      a.nb(href="#testC9") C9
+      |, 
+      a.nb(href="#testM11") M11
+      |  (SVG masks on SVG content). 
+      a(href="https://wpdev.uservoice.com/forums/257854-microsoft-edge-developer/suggestions/6261341-css-masking") Vote for more!
     p CanIUse pages: 
       a(href='http://caniuse.com/#feat=css-clip-path') CSS Clip-path
       |  

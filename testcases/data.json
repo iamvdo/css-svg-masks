@@ -3,84 +3,108 @@
     "clipping": [
       {
         "id": "clip",
-        "title": "clip: rect()",
+        "title": "<code>clip: rect()</code>",
         "note": "Property deprecated"
       },
       {
         "id": "clipPathInset",
-        "title": "clip-path: inset()"
+        "title": "<code>clip-path: inset()</code>"
       },
       {
         "id": "clipPathCircle",
-        "title": "clip-path: circle()"
+        "title": "<code>clip-path: circle()</code>"
       },
       {
         "id": "clipPathPolygon",
-        "title": "clip-path: polygon()"
+        "title": "<code>clip-path: polygon()</code>"
       },
       {
         "id": "clipPathSVGInline",
-        "title": "clip-path: url()",
+        "title": "<code>clip-path: url()</code>",
         "subtitle": "Referencing inline SVG <code>&lt;clipPath></code>"
       },
       {
         "id": "clipPathSVGDataImage",
-        "title": "clip-path: url()",
+        "title": "<code>clip-path: url()</code>",
         "subtitle": "Referencing inline SVG <code>&lt;clipPath></code> as <code>data:image</code>"
       },
       {
         "id": "clipPathSVGExternal",
-        "title": "clip-path: url()",
+        "title": "<code>clip-path: url()</code>",
         "subtitle": "Referencing external SVG <code>&lt;clipPath></code>"
+      },
+      {
+        "id": "clipPathCSSSVG",
+        "title": "CSS <code>clip-path</code> on SVG content",
+        "isSVG": "true"
+      },
+      {
+        "id": "clipPathSVGSVG",
+        "title": "SVG <code>&lt;clipPath></code> on SVG content",
+        "isSVG": "true",
+        "liveSVG": false,
+        "note": "The SVG part is not editable due to an Edge bug."
       }
     ],
     "masking": [
       {
         "id": "maskImageGradient",
-        "title": "mask-image: linear-gradient()",
+        "title": "<code>mask-image: linear-gradient()</code>",
         "subtitle": "Using (default) alpha mask"
       },
       {
         "id": "maskImageGradientLuminance",
-        "title": "mask-image: linear-gradient()",
+        "title": "<code>mask-image: linear-gradient()</code>",
         "subtitle": "Forcing luminance mask",
         "note": "If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content."
       },
       {
         "id": "maskImageUrl",
-        "title": "mask-image: url()",
+        "title": "<code>mask-image: url()</code>",
         "subtitle": "Using (default) alpha mask"
       },
       {
         "id": "maskImageUrlLuminance",
-        "title": "mask-image: url()",
+        "title": "<code>mask-image: url()</code>",
         "subtitle": "Forcing luminance mask",
         "note": "If you uncomment <code>mask-source-type</code>, this works in Chrome, but has weird impact on next content."
       },
       {
         "id": "maskProperties",
-        "title": "mask-*",
+        "title": "<code>mask-*</code>",
         "subtitle": "Like all <code>background-*</code> properties"
       },
       {
         "id": "maskSVGInline",
-        "title": "mask-image: url()",
+        "title": "<code>mask-image: url()</code>",
         "subtitle": "Referencing inline SVG <code>&lt;mask></code>, using (default) luminance mask"
       },
       {
         "id": "maskSVGInlineAlpha",
-        "title": "mask-image: url()",
+        "title": "<code>mask-image: url()</code>",
         "subtitle": "Referencing inline SVG <code>&lt;mask></code>, forcing alpha mask"
       },
       {
         "id": "maskSVGDataImage",
-        "title": "mask-image: url()",
+        "title": "<code>mask-image: url()</code>",
         "subtitle": "Referencing inline SVG <code>&lt;mask></code> as <code>data:image</code>"
       },
       {
         "id": "maskSVGExternal",
-        "title": "mask-image: url()",
+        "title": "<code>mask-image: url()</code>",
         "subtitle": "Referencing external SVG <code>&lt;mask></code>"
+      },
+      {
+        "id": "maskCSSSVG",
+        "title": "CSS <code>mask</code> on SVG content",
+        "isSVG": "true"
+      },
+      {
+        "id": "maskSVGSVG",
+        "title": "SVG <code>&lt;mask></code> on SVG content",
+        "isSVG": "true",
+        "liveSVG": false,
+        "note": "The <code>mask-image</code> property doesn’t seem to work on WebKit based browsers. Use <code>mask</code> instead. Also the SVG part is not editable due to an Edge bug."
       }
     ]
   }

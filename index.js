@@ -7,10 +7,11 @@ const templateFunc = pug.compileFile('./templates/testcase.pug');
 const data = JSON.parse(fs.readFileSync('./testcases/data.json', 'utf-8'));
 let clippingContent = '';
 let maskingContent = '';
-let nb = 1;
+
 
 for (let key in data.testcases) {
   const dataThemes = data.testcases[key];
+  let nb = 1;
   dataThemes.forEach(testcase => {
     let CSS, SVG;
     try {
@@ -22,6 +23,7 @@ for (let key in data.testcases) {
     testcase.sandboxCSS = sandboxCSS;
     testcase.SVG = SVG;
     testcase.nb = nb;
+    testcase.type = key.substr(0,1).toUpperCase();
     const fn = templateFunc(testcase);
     if (key == 'clipping') {
       clippingContent += fn;

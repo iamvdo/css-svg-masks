@@ -4,17 +4,20 @@
   style(id='liveCoding_js-' + id)= sandboxCSS
   .image
     img.Mask--placeholder(src='assets/image.jpg')
-    img.Mask(src='assets/image.jpg')
+    if isSVG
+      svg.Mask-svg
+        image.Mask(xlink:href='assets/image.jpg', width='200', height='200')
+    else
+      img.Mask(src='assets/image.jpg')
   .text
-    h3.title
-      code= title
-      a(id='test' + nb, href="#test" + nb).nb= nb
+    h3.title!= title
+      a(id='test' + type+nb, href="#test" + type+nb).nb= type+nb
     if subtitle
       p!= subtitle
     if SVG
       svg(id=svgId)!= SVG
       pre
-        code.code.liveCoding.xml(data-livecoding-id=svgId, contenteditable="true")= '\n' + SVG + '\n\n'
+        code.code.xml(class=(liveSVG==false) ? '' : 'liveCoding',data-livecoding-id=svgId, contenteditable=(liveSVG==false) ? "false" : "true")= '\n' + SVG + '\n\n'
     if CSS
       pre
         code.code.liveCoding.css(data-livecoding-id=jsId, contenteditable="true")= '\n' + CSS + '\n\n'
